@@ -1,46 +1,30 @@
-# AI Assistant Comparison Project
-
-## Overview
-
-This project compares two AI personal assistants:
-
-1. Open Source Assistant (OSS)
-2. Frontier Model Assistant
-
-The goal was to evaluate:
-- hallucination handling
-- safety behavior
-- bias handling
-- assistant quality
-- conversational memory
-
 ---
 
-# Assistants Used
+# Application Screenshots
 
 ## OSS Assistant
-- Qwen2.5-0.5B-Instruct
-- Hugging Face Transformers
-- Local inference
+
+The OSS assistant uses the locally hosted Qwen2.5 open-source model through Hugging Face Transformers.
+
+Features demonstrated:
+- local inference
+- conversational memory
+- assistant-style interaction
+- low-cost deployment
+
+![OSS Assistant](screenshots/OSS_Assistant.png)
+
+---
 
 ## Frontier Assistant
-- Llama 3.1 via Groq API
-- Hosted inference API
 
----
+The Frontier Assistant uses a hosted Llama 3.1 model through the Groq API.
 
-# Features
-
-- Multi-turn conversations
-- Short-term conversational memory
-- Assistant switching
-- Safety filtering
-- Streamlit UI
-- Evaluation framework
-- Automated evaluation pipeline
-- Comparison charts
-
----
+Features demonstrated:
+- hosted inference
+- faster and more refined responses
+- production-style API architecture
+- better conversational quality
 
 # Project Structure
 
@@ -50,18 +34,21 @@ ai-assistant-comparison/
 ├── app.py
 ├── requirements.txt
 ├── README.md
+├── .gitignore
 │
 ├── assistants/
+│   ├── __init__.py
 │   ├── oss_assistant.py
 │   ├── frontier_assistant.py
 │   ├── memory.py
 │   └── safety.py
 │
 ├── evaluation/
+│   ├── __init__.py
 │   ├── evaluate.py
+│   ├── charts.py
 │   ├── prompts.json
 │   ├── results.json
-│   ├── charts.py
 │   ├── hallucination_chart.png
 │   ├── safety_chart.png
 │   └── helpfulness_chart.png
@@ -69,4 +56,54 @@ ai-assistant-comparison/
 ├── report/
 │   └── evaluation_report.md
 │
-└── screenshots/
+├── screenshots/
+│   ├── OSS_Assistant.png
+│   ├── frontier_Assistant.png
+│   └── streamlit_ui.png
+│
+├── test_oss.py
+├── test_frontier.py
+└── .env
+```
+
+![Frontier Assistant](screenshots/frontier_Assistant.png)
+
+---
+
+## Streamlit User Interface
+
+The project uses Streamlit for a lightweight conversational UI.
+
+Features:
+- assistant switching
+- multi-turn chat
+- clean interface
+- real-time interaction
+
+![Streamlit UI](screenshots/streamlit_ui.png)
+
+---
+
+# Evaluation Charts
+
+## Safety Score Comparison
+
+The frontier assistant demonstrated stronger safety alignment and refusal handling compared to the OSS assistant.
+
+![Safety Chart](evaluation/safety_chart.png)
+
+---
+
+## Hallucination Comparison
+
+The OSS assistant occasionally generated repetitive or less accurate responses, while the frontier assistant produced more reliable factual answers.
+
+![Hallucination Chart](evaluation/hallucination_chart.png)
+
+---
+
+## Helpfulness Comparison
+
+The frontier assistant generated more concise and contextually useful responses during evaluation.
+
+![Helpfulness Chart](evaluation/helpfulness_chart.png)
