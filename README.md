@@ -362,6 +362,55 @@ Best suited for:
 - dotenv
 
 ---
+## Cost and Latency Comparison
+
+| Feature | OSS Assistant (Qwen2.5) | Frontier Assistant (Groq Llama 3.1) |
+|---|---|---|
+| Deployment Type | Local/Open-source | Hosted API |
+| Average Latency | ~2-5 sec | ~0.5-1 sec |
+| Inference Cost | Free (local inference) | API-based |
+| Hardware Requirement | Local CPU/GPU | None |
+| Scalability | Limited by hardware | High |
+| Privacy | Full local control | External API |
+| Model Size | 0.5B | 8B+ |
+| Internet Required | No | Yes |
+
+## Observability and Evaluation
+
+The project includes an evaluation framework to compare:
+- Safety
+- Hallucination tendency
+- Response quality
+- Latency
+
+Evaluation outputs are generated using:
+- Matplotlib charts
+- JSON evaluation logs
+- Automated comparison scripts
+
+Generated charts:
+- Safety comparison
+- Hallucination comparison
+- Latency analysis
+
+## Guardrails and Safety Layers
+
+Safety mechanisms implemented:
+- Harmful prompt filtering
+- Safe system prompts
+- Restricted unsafe outputs
+- Controlled response generation
+- Evaluation-based safety scoring
+
+
+## Memory and Tool Use
+
+The application supports:
+- Conversational memory using Streamlit session state
+- Persistent chat history
+- Tool-based evaluation pipeline
+- Chart generation utilities
+- Multi-assistant orchestration
 
 # Author
 
