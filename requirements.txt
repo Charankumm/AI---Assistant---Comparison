@@ -1,0 +1,9 @@
+streamlit
+transformers
+torch
+accelerate
+openai
+python-dotenv
+matplotlib
+pandas
+huggingface_hub
